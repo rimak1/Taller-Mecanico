@@ -1,0 +1,105 @@
+{
+  "repuestos": [
+    { "id": "rep-001", "nombre": "Filtro de aceite",              "precio": 25000,  "cantidadEnBodega": 20 },
+    { "id": "rep-002", "nombre": "Pastillas de freno",            "precio": 85000,  "cantidadEnBodega": 15 },
+    { "id": "rep-003", "nombre": "Aceite motor 5W30 (litro)",     "precio": 18000,  "cantidadEnBodega": 50 },
+    { "id": "rep-004", "nombre": "Bujías (juego x4)",             "precio": 48000,  "cantidadEnBodega": 12 },
+    { "id": "rep-005", "nombre": "Correa de distribución",        "precio": 120000, "cantidadEnBodega": 8  },
+    { "id": "rep-006", "nombre": "Amortiguador delantero",        "precio": 280000, "cantidadEnBodega": 6  },
+    { "id": "rep-007", "nombre": "Batería 12V",                   "precio": 320000, "cantidadEnBodega": 5  },
+    { "id": "rep-008", "nombre": "Filtro de aire",                "precio": 35000,  "cantidadEnBodega": 18 },
+    { "id": "rep-009", "nombre": "Líquido de frenos DOT4 (500ml)","precio": 22000,  "cantidadEnBodega": 25 },
+    { "id": "rep-010", "nombre": "Termostato",                    "precio": 55000,  "cantidadEnBodega": 10 },
+    { "id": "rep-011", "nombre": "Bomba de agua",                 "precio": 175000, "cantidadEnBodega": 7  },
+    { "id": "rep-012", "nombre": "Alternador",                    "precio": 450000, "cantidadEnBodega": 4  },
+    { "id": "rep-013", "nombre": "Sensor de oxígeno",             "precio": 130000, "cantidadEnBodega": 9  },
+    { "id": "rep-014", "nombre": "Disco de freno",                "precio": 195000, "cantidadEnBodega": 8  },
+    { "id": "rep-015", "nombre": "Faro delantero LED",            "precio": 380000, "cantidadEnBodega": 3  }
+  ],
+  "clientes": [
+    { "id": "cli-001", "nombre": "Carlos Mendoza", "documento": "1020304050", "correo": "carlos.mendoza@email.com" },
+    { "id": "cli-002", "nombre": "Ana García",     "documento": "1122334455", "correo": "ana.garcia@email.com"     },
+    { "id": "cli-003", "nombre": "Luis Rodríguez", "documento": "2233445566", "correo": "luis.rodriguez@email.com" },
+    { "id": "cli-004", "nombre": "María Torres",   "documento": "3344556677", "correo": "maria.torres@email.com"   },
+    { "id": "cli-005", "nombre": "Pedro Jiménez",  "documento": "4455667788", "correo": "pedro.jimenez@email.com"  }
+  ],
+  "ordenes": [
+    {
+      "id": "ord-001",
+      "clienteId": "cli-001",
+      "vehiculoPlaca": "ABC-123",
+      "vehiculoMarca": "Toyota Corolla",
+      "estado": "lista_para_facturar",
+      "cierreTecnico": {
+        "mecanico": "Juan Pérez",
+        "fecha": "2026-05-11T08:30:00.000Z",
+        "observaciones": "Cambio de aceite, filtros y pastillas completado sin novedad."
+      },
+      "items": [
+        { "repuestoId": "rep-001", "nombre": "Filtro de aceite",          "cantidad": 1, "precioUnitario": 25000 },
+        { "repuestoId": "rep-003", "nombre": "Aceite motor 5W30 (litro)", "cantidad": 4, "precioUnitario": 18000 },
+        { "repuestoId": "rep-002", "nombre": "Pastillas de freno",        "cantidad": 1, "precioUnitario": 85000 }
+      ],
+      "horasTrabajo": 2,
+      "costoHora": 50000,
+      "totalBruto": 282000,
+      "abonosPrevios": 50000,
+      "saldoNeto": 232000
+    },
+    {
+      "id": "ord-002",
+      "clienteId": "cli-002",
+      "vehiculoPlaca": "XYZ-789",
+      "vehiculoMarca": "Honda Civic",
+      "estado": "en_reparacion",
+      "cierreTecnico": null,
+      "items": [
+        { "repuestoId": "rep-004", "nombre": "Bujías (juego x4)", "cantidad": 1, "precioUnitario": 48000 },
+        { "repuestoId": "rep-008", "nombre": "Filtro de aire",    "cantidad": 1, "precioUnitario": 35000 }
+      ],
+      "horasTrabajo": 1,
+      "costoHora": 50000,
+      "totalBruto": 133000,
+      "abonosPrevios": 0,
+      "saldoNeto": 133000
+    },
+    {
+      "id": "ord-003",
+      "clienteId": "cli-003",
+      "vehiculoPlaca": "DEF-456",
+      "vehiculoMarca": "Chevrolet Spark",
+      "estado": "en_reparacion",
+      "cierreTecnico": null,
+      "items": [
+        { "repuestoId": "rep-005", "nombre": "Correa de distribución", "cantidad": 1, "precioUnitario": 120000 },
+        { "repuestoId": "rep-010", "nombre": "Termostato",             "cantidad": 1, "precioUnitario": 55000  }
+      ],
+      "horasTrabajo": 3,
+      "costoHora": 50000,
+      "totalBruto": 325000,
+      "abonosPrevios": 100000,
+      "saldoNeto": 225000
+    }
+  ],
+  "facturas": [],
+  "pagos": [
+    {
+      "id": "pago-anticipo-001",
+      "ordenId": "ord-001",
+      "monto": 50000,
+      "metodo": "efectivo",
+      "tipo": "anticipo",
+      "fecha": "2026-05-09T14:00:00.000Z",
+      "nota": "Anticipo recibido al momento de ingresar el vehículo al taller."
+    },
+    {
+      "id": "pago-anticipo-002",
+      "ordenId": "ord-003",
+      "monto": 100000,
+      "metodo": "tarjeta",
+      "tipo": "anticipo",
+      "fecha": "2026-05-10T10:15:00.000Z",
+      "nota": "Abono inicial para cubrir costo de repuestos."
+    }
+  ]
+}
